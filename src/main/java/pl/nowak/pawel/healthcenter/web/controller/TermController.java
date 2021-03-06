@@ -4,8 +4,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/doctors")
-public class DoctorController {
+@RequestMapping(value = "/terms")
+public class TermController {
     //use service & add annotation for endpoints (@GetMapping)
     public void list() {
 
