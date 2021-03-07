@@ -1,8 +1,8 @@
-package pl.nowak.pawel.healthcenter.repository.entity;
+package pl.nowak.pawel.healthcenter.web.model;
 
 import java.time.LocalDateTime;
 
-public class TermEntity {
+public class TermModel {
     private Long id;
 //    private ReservationEntity reservation;
     private LocalDateTime date;
