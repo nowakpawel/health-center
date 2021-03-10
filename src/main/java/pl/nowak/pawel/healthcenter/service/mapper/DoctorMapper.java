@@ -15,7 +15,8 @@ public class DoctorMapper {
     }
 
     public DoctorModel from(DoctorEntity doctorEntity) {
-        DoctorModel doctorModel = new DoctorModel();
+        ModelMapper modelMapper = new ModelMapper();
+        DoctorModel doctorModel = modelMapper.map(doctorEntity, DoctorModel.class);
         return doctorModel;
     }
 
