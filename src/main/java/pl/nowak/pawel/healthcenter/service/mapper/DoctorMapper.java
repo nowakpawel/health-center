@@ -7,11 +7,14 @@ import pl.nowak.pawel.healthcenter.web.model.DoctorModel;
 @Component
 public class DoctorMapper {
     public DoctorEntity from(DoctorModel doctorModel) {
-        return null;
+        DoctorEntity doctorEntity = new DoctorEntity();
+
+        return doctorEntity;
     }
 
     public DoctorModel from(DoctorEntity doctorEntity) {
-        return null;
+        DoctorModel doctorModel = new DoctorModel();
+        return doctorModel;
     }
 
 }
