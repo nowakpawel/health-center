@@ -8,6 +8,8 @@ import pl.nowak.pawel.healthcenter.web.model.DoctorModel;
 public class DoctorMapper {
     public DoctorEntity from(DoctorModel doctorModel) {
         DoctorEntity doctorEntity = new DoctorEntity();
+        doctorEntity.setId(doctorModel.getId());
+
 
         return doctorEntity;
     }
