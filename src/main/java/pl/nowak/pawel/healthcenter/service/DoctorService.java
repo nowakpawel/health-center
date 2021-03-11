@@ -38,12 +38,11 @@ public class DoctorService {
             throw new DoctorNotFoundException("Doctor is null!");
         }
 
-        //TODO: implement DoctorMapper's methods
         DoctorEntity doctorEntity = doctorMapper.from(doctorModel);
         DoctorEntity createdDoctor = doctorRepository.save(doctorEntity);
-        DoctorModel returneDoctor = doctorMapper.from(createdDoctor);
+        DoctorModel returnedDoctor = doctorMapper.from(createdDoctor);
 
-        return returneDoctor;
+        return returnedDoctor;
     }
 
     public DoctorModel read(Long id) throws DoctorNotFoundException {
@@ -53,8 +52,12 @@ public class DoctorService {
     }
 
     public DoctorModel update(Long id, DoctorModel doctorToUpdate) throws DoctorNotFoundException {
-        DoctorEntity doctorEntity = doctorMapper.from(read(id));
-        return null;
+        DoctorEntity doctorEntity = doctorRepository.getOne(id);
+        doctorEntity.setFirstName(doctorToUpdate.getFirstName());
+        doctorEntity.setLastName(doctorToUpdate.getLastName());
+        DoctorModel model = doctorMapper.from(doctorRepository.save(doctorEntity));
+
+        return model;
     }
 
     public void delete() {
